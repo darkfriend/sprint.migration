@@ -158,13 +158,15 @@ class VersionManager
         $versionFilter = $this->getVersionConfig()->getVal('version_filter', []);
 
         $filter = array_merge(
-            $versionFilter, [
-            'status'   => '',
-            'search'   => '',
-            'tag'      => '',
-            'modified' => '',
-            'older'    => '',
-        ], $filter
+            [
+                'status'   => '',
+                'search'   => '',
+                'tag'      => '',
+                'modified' => '',
+                'older'    => '',
+            ], 
+            $versionFilter,
+            $filter
         );
 
         $merge = [];
